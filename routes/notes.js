@@ -1,6 +1,6 @@
 const notes = require('express').Router();
 const idGen = require('../helpers/randIdGen');
-const { readFromFile, readAndAppend } = require('../helpers/readAndAppend');
+const { readFromFile, readAndAppend } = require('../helpers/fsHelp');
 
 notes.get('/', (req,res)=>{
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
@@ -18,7 +18,7 @@ notes.post('/', (req, res) => {
         note_id: idGen(),
       };
   
-      readAndAppend(newTip, './db/db.sjon');
+      readAndAppend(newTip, './db/db.json');
       res.json(`Tip added successfully 🚀`);
     } else {
       res.error('Error in adding tip');
