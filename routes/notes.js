@@ -1,9 +1,9 @@
 const notes = require('express').Router();
-const idGen = require('../helpers/randIdGen');
-const { readFromFile, readAndAppend } = require('../helpers/fsHelp');
+const { rdCurrent, updateData } = require('../helpers/fsHelp');
+const uniqid = require('uniqid')
 
 notes.get('/', (req,res)=>{
-    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+  rdCurrent('./db/db.json').then((data) => res.json(JSON.parse(data)));
 })
 
 notes.post('/', (req, res) => {
@@ -15,13 +15,15 @@ notes.post('/', (req, res) => {
       const newTip = {
         title,
         text,
-        note_id: idGen(),
+        id : uniqid(),
       };
   
-      readAndAppend(newTip, './db/db.json');
+      updateData(newTip, './db/db.json');
       res.json(`Tip added successfully 🚀`);
     } else {
       res.error('Error in adding tip');
     }
   });
+  notes.delete('/:id')
+  // Delete route api/notes/:id   (read all notes remove note with given id then rewrite db.json)
   module.exports = notes;
