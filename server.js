@@ -27,8 +27,6 @@ if (req.body) {
     id : uniqid(),
   };
 
-//   updateData(newTip, './db/db.json');
-//   res.json(`Tip added successfully 🚀`);
 notesList.push(newTip);
 fs.writeFile('./db/db.json', JSON.stringify(notesList, null ,4), (err) =>
 err ? console.error(err) : console.info(`\nUpdated Information`)
