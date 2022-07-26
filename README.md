@@ -1,6 +1,6 @@
 # noteTaking-mod11
 
-This project allows the user to save notes and re-visit them later.
+This project allows the user to save notes and re-visit them later. As well as delete any note by clicking on the red trash bin icon on the left hand side of the page.
 <br>[Deployed Link]( https://notetakingmod11.herokuapp.com/)
 
 ---
