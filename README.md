@@ -1,23 +1,75 @@
 # noteTaking-mod11
 
-GIVEN a note-taking application
-WHEN I open the Note Taker
-THEN I am presented with a landing page with a link to a notes page
-WHEN I click on the link to the notes page
-THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-WHEN I enter a new note title and the note’s text
-THEN a Save icon appears in the navigation at the top of the page
-WHEN I click on the Save icon
-THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
-WHEN I click on an existing note in the list in the left-hand column
-THEN that note appears in the right-hand column
-WHEN I click on the Write icon in the navigation at the top of the page
-THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+This project allows the user to save notes and re-visit them later.
+<br>[Deployed Link]( https://notetakingmod11.herokuapp.com/)
 
+---
 
-Routes: 
-get /notes  return notes.html
-get * return index.html
-get api /notes return JSON of all saved notes
-post api/notes take new not and add it to db.json (npm package to add an id to each note)
-Delete route api/notes/:id   (read all notes remove note with given id then rewrite db.json)
+## Demo
+
+Here is a short demonstration of the apps functionality from start to finish:
+
+![Add Sample Card Image](./Assets/Images/quickDemo.gif)
+
+---
+
+## Installation
+
+To install the project in terminal run this command:
+
+```bash
+    git@github.com:fiaschettima/noteTaking-mod11.git
+  ...
+
+```
+    
+## Usage/Examples
+
+To use the application 
+```javascript
+    cd noteTaking-mod11.git
+    node server.js
+```
+This will Initialize the application and allow you to run the application on local host. After this is done you can use this link [http://localhost:3001/](http://localhost:3001/) to open the page. (note--this will only work if you have rane node server.js to start the local server)
+Also worth mentioning when ready to close the application and no longer use it, in terminal enter 'CTRL C'
+
+---
+
+## Code Snippets
+
+The code displayed below is an example of a delete route. The way this route works is when entered or actiaved by the delete button in this case, it will check the parameters in the route for an id matching any id currently stored in 'db.json'
+
+![Manager Class code Snippet](./Assets/Images//deleteSnip.png)
+
+---
+
+## Tech Stack
+
+**Client:** BootStrap, CSS, HTML
+
+**Server:** Node, Express, uniqId, Path, FS
+
+---
+
+## Lessons Learned
+
+This project provided the oppurtunity to gain a better understanding of using server side routes to link pages and update information using route parameters.
+
+---
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+---
+
+## Badges
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+---
+
+## Authors
+
+- [@Matt Fiaschetti](https://github.com/fiaschettima)
+
